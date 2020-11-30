@@ -4,7 +4,7 @@ import os, time, random
 def do_command(command):
     os.system('screen -S mc -p 0 -X stuff "{}\n"'.format(command))
     # for debugging:
-    # os.system('screen -S mc -p 0 -X stuff "say {}\n"'.format(command))
+    os.system('screen -S mc -p 0 -X stuff "say {}\n"'.format(command))
 
 # data!
 start_weapons = ["stone_axe", "stone_pickaxe", "stone_sword", "diamond_sword"]
