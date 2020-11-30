@@ -9,8 +9,8 @@ def do_command(command):
 # data!
 start_weapons = ["stone_axe", "stone_pickaxe", "stone_sword", "diamond_sword"]
 food = ["golden_apple", "apple", "cooked_beef", "cooked_chicken"]
-blocks = ["white_wool", "snow_block", "red_bed", "blue_bed", "purple_bed", "crafting_table", "crafting_table", "furnace"]
-items = ["iron_pickaxe", "iron_axe"]
+blocks = ["white_wool", "snow_block", "red_bed", "blue_bed", "purple_bed", "crafting_table", "crafting_table", "furnace", "acacia_planks"]
+items = ["iron_pickaxe", "iron_axe", "stick"]
 mobs = ["blaze", "skeleton", "creeper", "zombie", "witch", "villager"]
 
 rooms = {
@@ -65,9 +65,11 @@ def execute():
     do_command('give @a minecraft:{}'.format(randl(start_weapons)))
     do_command('give @a minecraft:{}'.format(randl(food)))
     lock_room("CENTER", "air")
-    while True:
+    for round_num in range(20):
+        time.sleep(3) #for drama
+        do_command('say round {}'.format(round_num))
 
-        time.sleep(20)
+        time.sleep(40)
         do_command('give @r minecraft:golden_apple')
         for i in range(10):
             time.sleep(1)
@@ -84,7 +86,7 @@ def execute():
 
         # give random players items:
         do_command("give @r minecraft:{}".format(randl(items)))
-        do_command("give @r minecraft:{}".format(randl(blocks)))
+        do_command("give @r minecraft:{} {}".format(randl(blocks), random.randint(3, 7)))
         do_command("give @r minecraft:{}".format(randl(food)))
         do_command("xp add @r {}".format(random.randint(20, 70)))
 
@@ -92,5 +94,10 @@ def execute():
         rand_room = randl(list(rooms.keys()))
         x, y, z = rand_room[0], rand_room[1], rand_room[2]
         do_command("summon minecraft:{} {} {} {}".format(randl(mobs), x, y, z))
-        
+    
+    # cleanup 
+    do_command('kill @e')
+    do_command('clear @a')
+    x, y, z = rooms["CENTER"][0], rooms["CENTER"][1], rooms["CENTER"][2]
+    do_command('tp @a {} {} {}'.format(x, y, z))
 
