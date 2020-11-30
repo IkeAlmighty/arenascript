@@ -36,6 +36,6 @@ def execute():
     do_command('give @a minecraft:{}'.format(randl(start_food)))
 
     while True:
-        do_command('give @a minecraft:golden_apple')
+        # do_command('give @a minecraft:golden_apple')
         item_to_room("CENTER", "coal", 5)
         time.sleep(3)
