@@ -11,15 +11,15 @@ start_weapons = ["stone_axe", "stone_pickaxe", "stone_sword", "diamond_sword"]
 start_food = ["golden_apple", "apple", "cooked_beef", "cooked_chicken"]
 
 rooms = {
-    "CENTER": (8, 3, 8),
-    "ORANGE": (0, 3, 8),
-    "GREEN": (8, 3, 0),
-    "CYAN": (16, 3, 8),
-    "PINK": (16, 3, 0),
-    "YELLOW": (8, 3, 0),
-    "BLUE": (0, 3, 0),
-    "PURPLE": (8, 3, 16),
-    "RED": (16, 3, 16)
+    "CENTER": (8, 4, 8),
+    "ORANGE": (0, 4, 8),
+    "GREEN": (8, 4, 0),
+    "CYAN": (16, 4, 8),
+    "PINK": (16, 4, 0),
+    "YELLOW": (8, 4, 0),
+    "BLUE": (0, 4, 0),
+    "PURPLE": (8, 4, 16),
+    "RED": (16, 4, 16)
 }
 
 ## CUSTOM FUNCTIONS ##
@@ -39,7 +39,7 @@ def lock_room(room_name, blocktype):
     # then, for each door, fill it!
     for door in doors:
         x, y, z = door[0], door[1], door[2]
-        do_command("fill {} {} {} {} {} {} minecraft:{}".format(x, y, z, x, y + 5, z, blocktype))
+        do_command("fill {} {} {} {} {} {} minecraft:{}".format(x, y, z, x, y + 4, z, blocktype))
 
 # for randl 'random list element'
 def randl(_list):
