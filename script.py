@@ -1,5 +1,10 @@
 import os, time, random
 
+# runs a server command: 
+def do_command(command):
+    os.system('screen -S mc -p 0 -X stuff "{}\n"'.format(command))
+
+# data!
 start_weapons = ["stone_axe", "stone_pickaxe", "stone_sword", "diamond_sword"]
 start_food = ["golden_apple", "apple", "cooked_beef", "cooked_chicken"]
 
@@ -15,6 +20,9 @@ rooms = {
     "RED": (16, 3, 16)
 }
 
+## CUSTOM FUNCTIONS ##
+
+
 def lock_room():
     pass
 
@@ -27,10 +35,8 @@ def item_to_room(room_name, item, count):
     cmd_string = 'summon minecraft:item {} {} {} {{Item:{{id:"minecraft:{}",Count:{}b}}}}'
     do_command(cmd_string.format(room[0], room[1], room[2], item, str(count)))
 
-## MAIN COMMANDS ##
-def do_command(command):
-    os.system('screen -S mc -p 0 -X stuff "{}\n"'.format(command))
 
+## MAIN LOOP ##
 def execute():
     do_command('give @a minecraft:{}'.format(randl(start_weapons)))
     do_command('give @a minecraft:{}'.format(randl(start_food)))
