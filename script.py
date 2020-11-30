@@ -87,7 +87,7 @@ def execute():
     # clone -9 107 -9 25 100 25 -9 2 -9 
     do_command("fill -9 0 -9 25 10 25 minecraft:air")
     time.sleep(3)
-    do_command("clone -9 107 -9 100 25 -9 2 -9")
+    do_command("clone -9 107 -9 25 100 25 -9 2 -9")
 
     do_command('kill @e')
 
