@@ -81,6 +81,12 @@ item_to_room("YELLOW", "stone_sword", 2)
 
 ## MAIN LOOP ##
 def execute():
+    lock_room("CENTER", "obsidian")
+    do_command('kill @e')
+    do_command('clear @a')
+    x, y, z = rooms["CENTER"][0], rooms["CENTER"][1], rooms["CENTER"][2]
+    do_command('tp @a {} {} {}'.format(x, y, z))
+
     do_command('give @a minecraft:{}'.format(randl(start_weapons)))
     do_command('give @a minecraft:{}'.format(randl(food)))
     lock_room("CENTER", "air")
