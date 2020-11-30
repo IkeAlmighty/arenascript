@@ -68,9 +68,9 @@ def execute():
         time.sleep(3)
         
         # get a random room:
-        lock_room(randl(rooms.keys()), "obsidian")
-        lock_room(randl(rooms.keys()), "air")
-        lock_room(randl(rooms.keys()), "air")
-        lock_room(randl(rooms.keys()), "air")
-        lock_room(randl(rooms.keys()), "obsidian")
+        lock_room(randl(list(rooms.keys())), "obsidian")
+        lock_room(randl(list(rooms.keys())), "air")
+        lock_room(randl(list(rooms.keys())), "air")
+        lock_room(randl(list(rooms.keys())), "air")
+        lock_room(randl(list(rooms.keys())), "obsidian")
 
