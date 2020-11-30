@@ -9,7 +9,26 @@ def do_command(command):
 # data!
 start_weapons = ["stone_axe", "stone_pickaxe", "stone_sword", "diamond_sword"]
 food = ["golden_apple", "apple", "cooked_beef", "cooked_chicken"]
-blocks = ["white_wool", "snow_block", "red_bed", "blue_bed", "purple_bed", "crafting_table", "crafting_table", "furnace", "acacia_planks"]
+blocks = [
+    "white_wool", 
+    "snow_block", 
+    "red_bed", 
+    "blue_bed", 
+    "purple_bed", 
+    "crafting_table", 
+    "crafting_table", 
+    "furnace", 
+    "acacia_planks",
+    "red_wool",
+    "stone",
+    "acacia_door",
+    "iron_door",
+    "redstone",
+    "lever",
+    "brewing_stand",
+    "brick_wall",
+    "oak_log"
+    ]
 items = ["iron_pickaxe", "iron_axe", "stick"]
 mobs = ["blaze", "skeleton", "creeper", "zombie", "witch", "villager"]
 
