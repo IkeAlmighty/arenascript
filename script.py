@@ -33,7 +33,7 @@ def randl(_list):
 
 def item_to_room(room_name, item, count):
     room = rooms[room_name]
-    cmd_string = 'summon minecraft:item {} {} {} {{Item:{{id:"minecraft:{}",Count:{}b}}}}'
+    cmd_string = 'summon minecraft:item {} {} {} {{Item:{{id:\"minecraft:{}\",Count:{}b}}}}'
     do_command(cmd_string.format(room[0], room[1], room[2], item, str(count)))
 
 
