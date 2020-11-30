@@ -24,7 +24,7 @@ rooms = {
 
 ## CUSTOM FUNCTIONS ##
 
-def lock_room(room_name):
+def lock_room(room_name, blocktype):
     # get the room:
     room = rooms[room_name]
     # first, figure out where each doorway is:
@@ -39,7 +39,7 @@ def lock_room(room_name):
     # then, for each door, fill it!
     for door in doors:
         x, y, z = door[0], door[1], door[2]
-        do_command("fill {} {} {} {} {} {} minecraft:obsidian".format(x, y, z, x, y + 4, z))
+        do_command("fill {} {} {} {} {} {} minecraft:{}".format(x, y, z, x, y + 4, z, blocktype))
 
 # for randl 'random list element'
 def randl(_list):
@@ -61,7 +61,7 @@ item_to_room("YELLOW", "stone_sword", 2)
 def execute():
     do_command('give @a minecraft:{}'.format(randl(start_weapons)))
     do_command('give @a minecraft:{}'.format(randl(start_food)))
-    lock_room("CENTER")
+    lock_room("CENTER", "air")
     while True:
         # do_command('give @a minecraft:golden_apple')
         item_to_room("CENTER", "coal", 5)
