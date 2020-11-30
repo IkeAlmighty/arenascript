@@ -81,9 +81,17 @@ item_to_room("YELLOW", "stone_sword", 2)
 
 ## MAIN LOOP ##
 def execute():
-    lock_room("CENTER", "obsidian")
+
+    # reset the arena
+    # fill air -9 0 -9 25 10 25
+    # clone -9 107 -9 25 100 25 -9 2 -9 
+    do_command("fill -9 0 -9 25 10 25 minecraft:air")
+    time.sleep(3)
+    do_command("clone -9 107 -9 100 25 -9 2 -9")
+
     do_command('kill @e')
-    do_command('clear @a')
+
+    lock_room("CENTER", "obsidian")
     x, y, z = rooms["CENTER"][0], rooms["CENTER"][1], rooms["CENTER"][2]
     do_command('tp @a {} {} {}'.format(x, y, z))
 
@@ -125,9 +133,5 @@ def execute():
         x, y, z = rand_room[0], rand_room[1], rand_room[2]
         do_command("summon minecraft:{} {} {} {}".format(randl(mobs), x, y, z))
     
-    # cleanup 
-    do_command('kill @e')
-    do_command('clear @a')
-    x, y, z = rooms["CENTER"][0], rooms["CENTER"][1], rooms["CENTER"][2]
-    do_command('tp @a {} {} {}'.format(x, y, z))
+    # cleanup
 
