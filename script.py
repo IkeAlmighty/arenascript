@@ -8,7 +8,10 @@ def do_command(command):
 
 # data!
 start_weapons = ["stone_axe", "stone_pickaxe", "stone_sword", "diamond_sword"]
-start_food = ["golden_apple", "apple", "cooked_beef", "cooked_chicken"]
+food = ["golden_apple", "apple", "cooked_beef", "cooked_chicken"]
+blocks = ["white_wool", "snow_block", "red_bed", "blue_bed", "purple_bed", "crafting_table", "crafting_table", "furnace"]
+items = ["iron_pickaxe", "iron_axe"]
+mobs = ["blaze", "skeleton", "creeper", "zombie", "witch", "villager"]
 
 rooms = {
     "CENTER": (8, 4, 8),
@@ -60,17 +63,34 @@ item_to_room("YELLOW", "stone_sword", 2)
 ## MAIN LOOP ##
 def execute():
     do_command('give @a minecraft:{}'.format(randl(start_weapons)))
-    do_command('give @a minecraft:{}'.format(randl(start_food)))
+    do_command('give @a minecraft:{}'.format(randl(food)))
     lock_room("CENTER", "air")
     while True:
-        # do_command('give @a minecraft:golden_apple')
-        # item_to_room("CENTER", "coal", 5)
-        time.sleep(10)
+
+        time.sleep(20)
+        do_command('give @r minecraft:golden_apple')
+        for i in range(10):
+            time.sleep(1)
+            do_command('say {}'.format(10 - i))
         
-        # get a random room:
+        # lock and unlock rooms randomly:
+        lock_room(randl(list(rooms.keys())), "obsidian")
+        lock_room(randl(list(rooms.keys())), "obsidian")
+        lock_room(randl(list(rooms.keys())), "obsidian")
         lock_room(randl(list(rooms.keys())), "obsidian")
         lock_room(randl(list(rooms.keys())), "air")
         lock_room(randl(list(rooms.keys())), "air")
         lock_room(randl(list(rooms.keys())), "air")
-        lock_room(randl(list(rooms.keys())), "obsidian")
+
+        # give random players items:
+        do_command("give @r minecraft:{}".format(randl(items)))
+        do_command("give @r minecraft:{}".format(randl(blocks)))
+        do_command("give @r minecraft:{}".format(randl(food)))
+        do_command("xp add @r {}".format(random.randint(20, 70)))
+
+        # summon a mob to a random room:
+        rand_room = randl(list(rooms.keys()))
+        x, y, z = rand_room[0], rand_room[1], rand_room[2]
+        do_command("summon minecraft:{} {} {} {}".format(randl(mobs), x, y, z))
+        
 
