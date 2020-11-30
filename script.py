@@ -66,6 +66,11 @@ def execute():
         # do_command('give @a minecraft:golden_apple')
         # item_to_room("CENTER", "coal", 5)
         time.sleep(3)
-        lock_room("CENTER", "obsidian")
-        time.sleep(3)
-        lock_room("CENTER", "air")
+        
+        # get a random room:
+        lock_room(randl(rooms.keys()), "obsidian")
+        lock_room(randl(rooms.keys()), "air")
+        lock_room(randl(rooms.keys()), "air")
+        lock_room(randl(rooms.keys()), "air")
+        lock_room(randl(rooms.keys()), "obsidian")
+
