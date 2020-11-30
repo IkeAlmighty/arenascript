@@ -39,7 +39,7 @@ def lock_room(room_name, blocktype):
     # then, for each door, fill it!
     for door in doors:
         x, y, z = door[0], door[1], door[2]
-        do_command("fill {} {} {} {} {} {} minecraft:{}".format(x, y, z, x, y + 4, z, blocktype))
+        do_command("fill {} {} {} {} {} {} minecraft:{}".format(x, y, z, x, y + 5, z, blocktype))
 
 # for randl 'random list element'
 def randl(_list):
@@ -64,5 +64,8 @@ def execute():
     lock_room("CENTER", "air")
     while True:
         # do_command('give @a minecraft:golden_apple')
-        item_to_room("CENTER", "coal", 5)
+        # item_to_room("CENTER", "coal", 5)
         time.sleep(3)
+        lock_room("CENTER", "obsidian")
+        time.sleep(3)
+        lock_room("CENTER", "air")
