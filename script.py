@@ -139,7 +139,7 @@ def execute():
         do_command('give @r minecraft:golden_apple')
         for i in range(10):
             time.sleep(1)
-            do_command('say {}'.format(10 - i))
+            do_command('say next round in {}'.format(10 - i))
         
         # lock and unlock rooms randomly:
         lock_room(randl(list(rooms.keys())), "obsidian")
