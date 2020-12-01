@@ -45,7 +45,16 @@ items = [
     "iron_chestplate",
     "diamond_chestplate",
     "leather_chestplate",
-    "glass_bottle"
+    "glass_bottle",
+    "iron_leggings",
+    "gold_leggings",
+    "diamond_leggings",
+    "leather_leggings",
+    "leather_boots",
+    "iron_boots",
+    "gold_boots",
+    "diamond_boots",
+    "anvil"
     ]
 mobs = ["blaze", "skeleton", "creeper", "zombie", "witch", "villager"]
 
@@ -157,7 +166,7 @@ def execute():
         do_command("xp add @r {}".format(random.randint(20, 70)))
 
         # summon a mob to a random room:
-        for i in range(0, random.randint(1,  4)):
+        for i in range(0, random.randint(1,  2)):
             spawn_mob()
     
     # cleanup
