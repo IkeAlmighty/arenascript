@@ -96,8 +96,9 @@ def item_to_room(room_name, item, count):
 item_to_room("YELLOW", "stone_sword", 2)
 
 def spawn_mob():
-    rand_room = randl(list(rooms.keys()))
-    x, y, z = rand_room[0], rand_room[1], rand_room[2]
+    rand_room_name = randl(list(rooms.keys()))
+    room = rooms[rand_room_name]
+    x, y, z = room[0], room[1], room[2]
     do_command("summon minecraft:{} {} {} {}".format(randl(mobs), x, y, z))
 
 
