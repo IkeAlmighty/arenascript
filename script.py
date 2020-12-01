@@ -56,7 +56,7 @@ items = [
     "diamond_boots",
     "anvil"
     ]
-mobs = ["blaze", "skeleton", "creeper", "zombie", "witch", "villager"]
+mobs = ["blaze", "skeleton", "creeper", "zombie", "villager"]
 
 rooms = {
     "CENTER": (8, 4, 8),
@@ -160,6 +160,11 @@ def execute():
         lock_room(randl(list(rooms.keys())), "air")
 
         # give random players items:
+        do_command("give @r minecraft:{}".format(randl(items)))
+        do_command("give @r minecraft:{} {}".format(randl(blocks), random.randint(3, 7)))
+        do_command("give @r minecraft:{}".format(randl(food)))
+        do_command("xp add @r {}".format(random.randint(20, 70)))
+
         do_command("give @r minecraft:{}".format(randl(items)))
         do_command("give @r minecraft:{} {}".format(randl(blocks), random.randint(3, 7)))
         do_command("give @r minecraft:{}".format(randl(food)))
