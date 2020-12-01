@@ -90,6 +90,7 @@ def execute():
     do_command("clone -9 107 -9 25 100 25 -9 2 -9")
 
     do_command('kill @e')
+    do_command('clear @a')
 
     lock_room("CENTER", "obsidian")
     x, y, z = rooms["CENTER"][0], rooms["CENTER"][1], rooms["CENTER"][2]
