@@ -38,7 +38,14 @@ items = [
     "torch",
     "soul_torch",
     "iron_sword",
-    "diamond_sword"
+    "diamond_sword",
+    "water_bucket",
+    "gold_axe",
+    "gold_chestplate",
+    "iron_chestplate",
+    "diamond_chestplate",
+    "leather_chestplate",
+    "glass_bottle"
     ]
 mobs = ["blaze", "skeleton", "creeper", "zombie", "witch", "villager"]
 
@@ -144,6 +151,18 @@ def execute():
         do_command("xp add @r {}".format(random.randint(20, 70)))
 
         # summon a mob to a random room:
+        rand_room = randl(list(rooms.keys()))
+        x, y, z = rand_room[0], rand_room[1], rand_room[2]
+        do_command("summon minecraft:{} {} {} {}".format(randl(mobs), x, y, z))
+
+        rand_room = randl(list(rooms.keys()))
+        x, y, z = rand_room[0], rand_room[1], rand_room[2]
+        do_command("summon minecraft:{} {} {} {}".format(randl(mobs), x, y, z))
+
+        rand_room = randl(list(rooms.keys()))
+        x, y, z = rand_room[0], rand_room[1], rand_room[2]
+        do_command("summon minecraft:{} {} {} {}".format(randl(mobs), x, y, z))
+
         rand_room = randl(list(rooms.keys()))
         x, y, z = rand_room[0], rand_room[1], rand_room[2]
         do_command("summon minecraft:{} {} {} {}".format(randl(mobs), x, y, z))
