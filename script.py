@@ -11,10 +11,7 @@ start_weapons = ["stone_axe", "stone_pickaxe", "stone_sword", "diamond_sword"]
 food = ["golden_apple", "apple", "cooked_beef", "cooked_chicken"]
 blocks = [
     "white_wool", 
-    "snow_block", 
-    "red_bed", 
-    "blue_bed", 
-    "purple_bed", 
+    "snow_block",  
     "crafting_table", 
     "crafting_table", 
     "furnace", 
@@ -29,7 +26,20 @@ blocks = [
     "brick_wall",
     "oak_log"
     ]
-items = ["iron_pickaxe", "iron_axe", "stick"]
+items = [
+    "iron_pickaxe", 
+    "iron_axe", 
+    "stick", 
+    "blue_bed",
+    "flint_and_steel",
+    "creeper_spawn_egg",
+    "wolf_spawn_egg",
+    "tnt",
+    "torch",
+    "soul_torch",
+    "iron_sword",
+    "diamond_sword"
+    ]
 mobs = ["blaze", "skeleton", "creeper", "zombie", "witch", "villager"]
 
 rooms = {
