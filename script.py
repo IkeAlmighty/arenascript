@@ -4,7 +4,7 @@ import os, time, random
 def do_command(command):
     os.system('screen -S mc -p 0 -X stuff "{}\n"'.format(command))
     # for debugging:
-    os.system('screen -S mc -p 0 -X stuff "say {}\n"'.format(command))
+    # os.system('screen -S mc -p 0 -X stuff "say {}\n"'.format(command))
 
 # data!
 start_weapons = ["stone_axe", "stone_pickaxe", "stone_sword", "diamond_sword"]
@@ -157,7 +157,7 @@ def execute():
         do_command("xp add @r {}".format(random.randint(20, 70)))
 
         # summon a mob to a random room:
-        for i in range(0, 20):
+        for i in range(0, random.randint(1,  4)):
             spawn_mob()
     
     # cleanup
