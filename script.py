@@ -114,6 +114,10 @@ def execute():
         do_command('say beginning in {}'.format(11 - second))
 
     lock_room("CENTER", "air")
+    do_command("give @a minecraft:{}".format(randl(start_weapons)))
+    do_command("give @a minecraft:{}".format(randl(items)))
+    do_command("give @a minecraft:{}".format(randl(items)))
+
     for round_num in range(20):
         time.sleep(3) #for drama
         do_command('say round {}'.format(round_num))
