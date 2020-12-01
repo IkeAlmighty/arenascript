@@ -4,7 +4,7 @@ import os, time, random
 def do_command(command):
     os.system('screen -S mc -p 0 -X stuff "{}\n"'.format(command))
     # for debugging:
-    # os.system('screen -S mc -p 0 -X stuff "say {}\n"'.format(command))
+    os.system('screen -S mc -p 0 -X stuff "say {}\n"'.format(command))
 
 # data!
 start_weapons = ["stone_axe", "stone_pickaxe", "stone_sword", "diamond_sword"]
@@ -95,6 +95,11 @@ def item_to_room(room_name, item, count):
 
 item_to_room("YELLOW", "stone_sword", 2)
 
+def spawn_mob():
+    rand_room = randl(list(rooms.keys()))
+    x, y, z = rand_room[0], rand_room[1], rand_room[2]
+    do_command("summon minecraft:{} {} {} {}".format(randl(mobs), x, y, z))
+
 
 ## MAIN LOOP ##
 def execute():
@@ -151,21 +156,8 @@ def execute():
         do_command("xp add @r {}".format(random.randint(20, 70)))
 
         # summon a mob to a random room:
-        rand_room = randl(list(rooms.keys()))
-        x, y, z = rand_room[0], rand_room[1], rand_room[2]
-        do_command("summon minecraft:{} {} {} {}".format(randl(mobs), x, y, z))
-
-        rand_room = randl(list(rooms.keys()))
-        x, y, z = rand_room[0], rand_room[1], rand_room[2]
-        do_command("summon minecraft:{} {} {} {}".format(randl(mobs), x, y, z))
-
-        rand_room = randl(list(rooms.keys()))
-        x, y, z = rand_room[0], rand_room[1], rand_room[2]
-        do_command("summon minecraft:{} {} {} {}".format(randl(mobs), x, y, z))
-
-        rand_room = randl(list(rooms.keys()))
-        x, y, z = rand_room[0], rand_room[1], rand_room[2]
-        do_command("summon minecraft:{} {} {} {}".format(randl(mobs), x, y, z))
+        for i in range(0, 20):
+            spawn_mob()
     
     # cleanup
 
